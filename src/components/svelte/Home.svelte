@@ -46,7 +46,9 @@
   </ul>
 </section>
 
-<section class="grid grid-cols-3 py-8 px-4 md:px-40 lg:px-80 gap-4">
+<section
+  class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 py-8 px-4 md:px-40 lg:px-80 gap-4"
+>
   {#each posts as post}
     <a
       href={post.slug}
