@@ -4,4 +4,15 @@ description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 15 2022"
 ---
 
-## Hello there
+# Hello there
+
+```svelte
+<script>
+  const code = hello;
+  function hello() {
+    console.log("HEllo");
+  }
+</script>
+
+<button on:click="{hello()}">Hello</button>
+```
