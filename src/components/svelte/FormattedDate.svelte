@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let myDate: string;
+  export let myDate: Date;
 
   const formattedDate = new Date(myDate).toLocaleDateString("en-US", {
     year: "numeric",

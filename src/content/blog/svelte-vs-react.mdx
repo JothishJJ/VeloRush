@@ -1,0 +1,61 @@
+---
+title: Svelte Vs React
+description: "Lorem ipsum dolor sit amet"
+pubDate: "Jul 15 2022"
+---
+
+# Svelte Vs React
+
+When we come to javascript framewroks, React and Svelte are some of the names that really stick around. React being significantly more popular, but it is not always a popularity contest, is it? Let's talk business.
+
+### Structure of framewroks
+
+When I am talking about svelte, I am referring to svelte kit. Svelte kit is a really good framework. [Sveltekit](https://kit.svelte-kit.com) also has a directory based router and much more.
+
+Now on other hand, React doesn't really have a standared way building react apps. But I will use [NextJS](https://nextjs.dev) as an example. NextJs is a exeptionally good framework for making react apps, it too has a directory based navigation, and much more features
+
+### Popularity
+
+While, I will say that popularity is not the best point of an application it is a factor, using react has the advantage for finding jobs more quickly and also you could find more engineers to hire if you're using React. Unfortunately Popularity is big thing for the decision.
+
+### Implementation of Code
+
+
+In react 👇
+
+```tsx
+
+fucntion Component() {
+
+  // useEffect for lifecycle events
+  useEffect(() => { // Requires a deep understanding of react 
+    function async getData() { // No direct async function support
+      const data = fetch();
+    }
+    getData();
+  })
+
+  return (
+    <div>
+      {data.title}
+    </div>
+  );
+}
+
+```
+
+In svelte 👇
+
+```svelte
+<!-- More readable code -->
+<script lang="ts">
+  onMount(async() => { // accepts async function
+    function async get data
+  })
+</script>
+
+
+<div>
+  {data.title}
+</div>
+```
