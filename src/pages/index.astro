@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Home from "../components/svelte/Home.svelte";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -26,15 +27,7 @@ console.log(
   </head>
   <body>
     <main>
-      {
-        posts.map((post) => {
-          return (
-            <a href={`/${post.slug}`}>
-              <h2>{post.data.title}</h2>
-            </a>
-          );
-        })
-      }
+      <Home {posts} />
     </main>
   </body>
 </html>
