@@ -46,17 +46,17 @@
   </ul>
 </section>
 
-<section
-  class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 py-8 px-4 md:px-40 lg:px-80 gap-4"
->
-  {#each posts as post}
-    <a
-      href={post.slug}
-      class="font-display rounded-lg border-2 border-neutral-800 hover:border-blue-500 p-2"
-    >
-      <p>{post.data.title}</p>
-      <p class="line-clamp-4">{post.data.description}</p>
-      <small><FormattedDate myDate={post.data.pubDate} /></small>
-    </a>
-  {/each}
+<section class="py-8 px-4 md:px-40 lg:px-80">
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+    {#each posts as post}
+      <a
+        href={post.slug}
+        class="font-display rounded-lg border-2 border-neutral-800 hover:border-blue-500 p-2"
+      >
+        <h3 class="text-2xl font-display font-semibold">{post.data.title}</h3>
+        <p class="line-clamp-4">{post.data.description}</p>
+        <small><FormattedDate myDate={post.data.pubDate} /></small>
+      </a>
+    {/each}
+  </div>
 </section>
