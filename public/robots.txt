@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://velorush.vercel.app/sitemap-index.xml
