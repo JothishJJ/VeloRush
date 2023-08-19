@@ -22,21 +22,22 @@ While, I will say that popularity is not the best point of an application it is 
 
 In react 👇
 
-```tsx
-
+```jsx
 fucntion Component() {
+
+  const [data, setData] = useState(null);
 
   // useEffect for lifecycle events
   useEffect(() => { // Requires a deep understanding of react
     function async getData() { // No direct async function support
-      const data = fetch();
+      return fetch();
     }
-    getData();
+    setData(getData());
   })
 
   return (
     <div>
-      {data.title}
+      {data ? data.title : "Sample"}
     </div>
   );
 }
@@ -47,14 +48,18 @@ In svelte 👇
 
 ```svelte
 <!-- More readable code -->
-<script lang="ts">
+<script>
+  let data = null;
   onMount(async() => { // accepts async function
-    function async get data
+    data = fetch();
   })
 </script>
 
-
 <div>
-  {data.title}
+  {#if data}
+    {data.title}
+  {:else}
+    {"Sample"}
+  {/if}
 </div>
 ```
