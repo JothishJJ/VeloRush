@@ -12,7 +12,7 @@
   </h1>
   <ul class="flex flex-col gap-10 pt-16">
     <li class="md:text-left p-2 border-2 rounded-lg">
-      <h3 class="text-2xl font-display font-semibold">The Bug Stops Here</h3>
+      <h2 class="text-2xl font-display font-semibold">The Bug Stops Here</h2>
       <p>
         Welcome to 'The Bug Stops Here,' your one-stop destination for
         programming insights, tips, and solutions. Delve into a world where
@@ -22,9 +22,9 @@
       </p>
     </li>
     <li class="md:text-right p-2 border-2 rounded-lg">
-      <h3 class="text-2xl font-display font-semibold">
+      <h2 class="text-2xl font-display font-semibold">
         Unlock the World of Programming
-      </h3>
+      </h2>
       <p>
         Welcome to our programming blog, a haven for coding enthusiasts and
         aspiring developers. Immerse yourself in a world of algorithms,
@@ -34,7 +34,7 @@
       </p>
     </li>
     <li class="md:text-left p-1 border-2 rounded-lg">
-      <h3 class="text-2xl font-display font-semibold">Ctrl+Code+Create</h3>
+      <h2 class="text-2xl font-display font-semibold">Ctrl+Code+Create</h2>
       <p>
         Engage the ultimate power sequence – Ctrl+Code+Create – as you enter our
         programming blog. Here, the keystrokes of innovation are transformed
