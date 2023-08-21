@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
+import BaseHead from "../components/shared/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Home from "../components/svelte/Home.svelte";
+import Home from "../components/Home/Home.svelte";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()

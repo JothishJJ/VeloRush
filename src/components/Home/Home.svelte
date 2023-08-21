@@ -1,7 +1,7 @@
 <script lang="ts">
   // This page is in svelte just because 🤷‍♂️
   import type { CollectionEntry } from "astro:content";
-  import FormattedDate from "./FormattedDate.svelte";
+  import FormattedDate from "../shared/FormattedDate.svelte";
 
   export let posts: CollectionEntry<"blog">[];
 </script>
