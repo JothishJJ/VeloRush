@@ -8,6 +8,8 @@ pubDate: "Aug 16 2023"
 
 When we come to javascript framewroks, React and Svelte are some of the names that really stick around. React being significantly more popular, but it is not always a popularity contest, is it? Let's talk business.
 
+## React Developer
+
 ### Structure of framewroks
 
 When I am talking about svelte, I am referring to svelte kit. Svelte kit is a really good framework. [Sveltekit](https://kit.svelte-kit.com) also has a directory based router and much more.
@@ -33,12 +35,12 @@ fucntion Component() {
       return fetch();
     }
     setData(getData());
-  })
+  }, [])
 
   return (
     <div>
       {data ? data.title : "Sample"}
-    </div>
+  </div>
   );
 }
 
@@ -47,9 +49,9 @@ fucntion Component() {
 In svelte 👇
 
 ```svelte
-<!-- More readable code -->
 <script>
   let data = null;
+  <!-- More readable code -->
   onMount(async() => { // accepts async function
     data = fetch();
   })
@@ -63,3 +65,15 @@ In svelte 👇
   {/if}
 </div>
 ```
+
+As you can see from the code about A react component is a javascript function with jsx object as it's return value, while every svelte page is a component.
+
+### Async functions and Lifesycle
+
+In the code above, I am fething data from a database. For react, I am using the useState hook and setting the initial value to null and I added a useState hook to with the [] to only run the code once, and useEffect hook cannot take an async function so I am defining an async function and running it.
+
+But for svelte, I am just defining a variable using the let keyword and then calling the onMount function, not is the code more readable but it can also take an async function.
+
+### Readable code
+
+As you saw above calling async functions and handling lifecycle of an application is more easier to do that in svelte.
