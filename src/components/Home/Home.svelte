@@ -4,6 +4,9 @@
   import FormattedDate from "../shared/FormattedDate.svelte";
 
   export let posts: CollectionEntry<"blog">[];
+
+  // Limit the post number to 10 posts
+  posts = posts.slice(0, 10);
 </script>
 
 <section class="text-center py-8 px-4 md:px-40 lg:px-80">
@@ -51,7 +54,7 @@
     {#each posts as post}
       <a
         href={post.slug}
-        class="font-display rounded-lg border-2 border-neutral-800 hover:border-blue-500 p-2"
+        class="font-display rounded-lg border-2 border-neutral-800 hover:border-blue-500 p-2 transition hover:-translate-y-2 hover:shadow-lg"
       >
         <h3 class="text-2xl font-display font-semibold">{post.data.title}</h3>
         <p class="line-clamp-4">{post.data.description}</p>
