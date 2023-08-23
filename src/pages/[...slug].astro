@@ -1,6 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../layouts/BlogPost.astro";
+import Newsletter from "../components/shared/Newsletter.svelte";
 
 export const prerender = true;
 
@@ -17,6 +18,13 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-  <Content />
-</BlogPost>
+<main class="px-4 md:px-40 lg:px-80">
+  <BlogPost {...post.data}>
+    <Content />
+  </BlogPost>
+</main>
+<footer class="bg-neutral-100 p-8 w-full">
+  <div class="px-4 md:px-40 lg:px-80">
+    <Newsletter />
+  </div>
+</footer>

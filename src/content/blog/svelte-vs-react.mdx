@@ -76,4 +76,17 @@ But for svelte, I am just defining a variable using the let keyword and then cal
 
 ### Readable code
 
-As you saw above calling async functions and handling lifecycle of an application is more easier to do that in svelte.
+As you saw above calling async functions and handling lifecycle of an application is more easier to do in `svelte` than in `React`. I realise that this is not a fair comparision because we are not event using svelte's await blocks to handle promices.
+
+```svelte
+{#await promice}
+  <!-- Waiting for the promice -->
+  <p>Waiting...</p>
+{:then data}
+  <!-- After getting the data -->
+  {data.title}
+{:catch error}
+  <!-- Catching error -->
+  <p>Error: {error}</p>
+{/await}
+```

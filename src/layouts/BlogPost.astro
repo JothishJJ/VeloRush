@@ -57,7 +57,7 @@ const { title, description, pubDate } = Astro.props;
     </style>
   </head>
 
-  <body class="px-4 md:px-40 lg:px-80">
+  <body>
     <small><FormattedDate myDate={pubDate} /></small>
     <div class="text-6xl flex flex-col gap-8 text-neutral-500 pb-8">
       <slot />
