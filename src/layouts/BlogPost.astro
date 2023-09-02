@@ -14,19 +14,30 @@ const { title, description, pubDate } = Astro.props;
 
     <!-- The css is a little wack but Idk how to use tailwind styles here -->
     <style is:inline>
-      p {
+      p,
+      ul,
+      li {
         font-size: 16px;
-        /* margin: 1rem 0; */
+        color: #6f6f6f;
+      }
+
+      ul {
+        list-style-type: disc !important;
       }
 
       pre {
         font-size: 1rem !important;
-        line-height: 1.25;
+        line-height: 1.25 !important;
         padding: 0.75rem 1rem;
-        font-family: "Space Mono", monospace;
+        font-family: "Space Mono", monospace !important;
         border-radius: 1rem;
         background-color: #f1f1f1 !important;
         /* margin: 1rem 0 !important; */
+      }
+
+      code {
+        background-color: #f1f1f1 !important;
+        border-radius: 0.1rem !important;
       }
 
       h1,
@@ -35,8 +46,8 @@ const { title, description, pubDate } = Astro.props;
       h4,
       h5,
       h6 {
-        font-family: "Poppins", sans-serif;
-        color: #404040;
+        font-family: "Poppins", sans-serif !important;
+        color: #404040 !important;
         /* margin: 1rem 0 !important; */
       }
 
@@ -54,12 +65,20 @@ const { title, description, pubDate } = Astro.props;
         font-size: 2rem !important;
         line-height: 1;
       }
+
+      a {
+        color: #000 !important;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
 
   <body>
     <small><FormattedDate myDate={pubDate} /></small>
-    <div class="text-6xl flex flex-col gap-8 text-neutral-500 pb-8">
+    <div class="text-6xl flex flex-col gap-8 pb-8">
       <slot />
     </div>
   </body>

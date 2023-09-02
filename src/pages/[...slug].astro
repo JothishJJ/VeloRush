@@ -20,7 +20,14 @@ const { Content } = await post.render();
 
 <main class="px-4 md:px-40 lg:px-80">
   <BlogPost {...post.data}>
-    <img src={post.data.heroImage} alt={post.data.title} class="rounded-sm aspect-video" transition:name={post.slug} width="1280" height="720">
+    <img
+      src={post.data.heroImage}
+      alt={post.data.title}
+      class="rounded-sm aspect-video object-cover"
+      transition:name={post.slug}
+      width="1280"
+      height="720"
+    />
     <Content />
   </BlogPost>
 </main>
