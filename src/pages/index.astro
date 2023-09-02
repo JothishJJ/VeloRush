@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import BaseHead from "../components/shared/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Home from "../components/Home/Home.svelte";
 import Newsletter from "../components/shared/Newsletter.svelte";
+import FormattedDate from "../components/shared/FormattedDate.svelte";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -17,7 +17,87 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <main>
-      <Home {posts} />
+      <section class="text-center py-8 px-4 md:px-40 lg:px-80">
+        <h1 class="text-5xl md:text-7xl pt-4 pb-2 font-display">
+          Wellcome to VeloRush
+        </h1>
+        <ul class="flex flex-col gap-10 pt-16">
+          <li class="md:text-left p-2 border-2 rounded-lg flex gap-4 items-center">
+            <img
+              src="/macbook-coding.jpg"
+              alt="Coding in Macbook"
+              width="330"
+              height="200"
+              class="rounded-lg"
+            />
+            <div>
+              <h2 class="second-list text-2xl font-display font-semibold">
+                The Bug Stops Here
+              </h2>
+              <p>
+                Welcome to 'The Bug Stops Here,' your one-stop destination for
+                programming insights, tips, and solutions. Delve into a world where
+                coding challenges are conquered, bugs are squashed, and new horizons
+                are explored.
+              </p>
+            </div>
+          </li>
+          <li class="md:text-right p-2 border-2 rounded-lg flex gap-4 items-center">
+            <div>
+              <h2 class="text-2xl font-display font-semibold">
+                Unlock the World of Programming
+              </h2>
+              <p>
+                Welcome to our programming blog, a haven for coding enthusiasts and
+                aspiring developers. Immerse yourself in a world of algorithms,
+                languages, and innovative solutions.
+              </p>
+            </div>
+            <img
+              src="/teamwork.jpg"
+              alt="Teamwork"
+              width="330"
+              height="200"
+              class="rounded-lg"
+            />
+          </li>
+          <li class="md:text-left p-1 border-2 rounded-lg flex gap-4 items-center">
+            <img
+              src="/typing.jpg"
+              alt="Typing"
+              width="330"
+              height="200"
+              class="rounded-lg"
+            />
+            <div>
+              <h2 class="text-2xl font-display font-semibold">Ctrl+Code+Create</h2>
+              <p>
+                Engage the ultimate power sequence – Ctrl+Code+Create – as you enter
+                our programming blog. Here, the keystrokes of innovation are
+                transformed into lines of code that shape the digital world.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      
+      <section class="py-8 px-4 md:px-40 lg:px-80">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+          {posts.map((post) => 
+            <a
+              href={post.slug}
+              class="font-display rounded-lg border-2 border-neutral-800 hover:border-blue-500 transition hover:-translate-y-2 hover:shadow-lg"
+            >
+              <img src={post.data.heroImage} alt={post.data.title} class="rounded-t-lg aspect-video" transition:name={post.slug} width="1280" height="720">
+              <div class="p-2 h-32 bg-neutral-200 rounded-b-lg">
+                <p class="text-2xl font-display font-semibold">{post.data.title}</p>
+                <p class="line-clamp-2">{post.data.description}</p>
+                <small><FormattedDate myDate={post.data.pubDate} /></small>
+              </div>
+            </a>
+          )}
+        </div>
+      </section>
     </main>
     <footer class="bg-neutral-100 p-8">
       <div class="px-4 md:px-40 lg:px-80">
