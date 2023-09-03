@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import FormattedDate from "../shared/FormattedDate.svelte";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<section class="py-8 px-4 md:px-40 lg:px-80">
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+    {
+      posts.map((post) => (
+        <a
+          href={post.slug}
+          class="font-display rounded-lg border-2 border-neutral-800 bg-neutral-800 hover:border-blue-500 transition hover:-translate-y-2 hover:shadow-lg"
+        >
+          <img
+            src={post.data.heroImage}
+            alt={post.data.title}
+            class="rounded-t-lg aspect-video object-cover"
+            transition:name={post.slug}
+            width="1280"
+            height="720"
+          />
+          <div class="p-2 h-32 bg-neutral-200 rounded-b-lg">
+            <p class="text-2xl font-display font-semibold">{post.data.title}</p>
+            <p class="line-clamp-2">{post.data.description}</p>
+            <small>
+              <FormattedDate myDate={post.data.pubDate} />
+            </small>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

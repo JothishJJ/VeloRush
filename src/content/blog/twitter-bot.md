@@ -2,7 +2,7 @@
 title: "Making a Twitter Bot using Python"
 description: "This blog covers how you can make your very own custom Twitter bot that tweets Programming Quotes/Jokes using pyton"
 pubDate: "Sep 2 2023"
-heroImage: "https://i.ibb.co/PtXKZnp/twitter-image.png"
+heroImage: "https://i.ibb.co/t3yNgbj/twitter-image.webp"
 ---
 
 # Making a Twitter Bot using Python
