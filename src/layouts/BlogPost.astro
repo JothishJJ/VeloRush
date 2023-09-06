@@ -5,12 +5,12 @@ import FormattedDate from "../components/shared/FormattedDate.svelte";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate } = Astro.props;
+const { title, description, pubDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} , image={heroImage} />
 
     <!-- The css is a little wack but Idk how to use tailwind styles here -->
     <style is:inline>
